@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Beranda | Cenna Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f0f4f8;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .hero-section {
+            background: linear-gradient(90deg, #4f8cff 60%, #a6e1fa 100%);
+            color: #fff;
+            padding: 80px 0 60px 0;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 8px 32px rgba(79,140,255,0.15);
+        }
+        .hero-title {
+            font-size: 2.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .hero-desc {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .feature-card {
+            border: none;
+            border-radius: 18px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            transition: transform 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px) scale(1.03);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #4f8cff;
+            margin-bottom: 10px;
+        }
+        footer {
+            background: #222;
+            color: #eee;
+            text-align: center;
+            padding: 1.2rem 0 0.7rem 0;
+            margin-top: 60px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        .nav-link.active {
+            font-weight: bold;
+            color: #4f8cff !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Cenna Web</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="bosstrap.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="hero-title mb-3">Selamat Datang di Cenna Web</h1>
+            <p class="hero-desc">Platform sederhana untuk belajar Bootstrap dan membuat tampilan web modern dengan mudah.</p>
+            <a href="about.html" class="btn btn-light btn-lg px-4 shadow-sm">Pelajari Lebih Lanjut</a>
+        </div>
+    </section>
+
+    <div class="container mt-5">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card feature-card text-center p-3">
+                    <div class="feature-icon mb-2">
+                        <i class="bi bi-lightning-charge"></i>
+                    </div>
+                    <h5 class="card-title">Cepat & Responsif</h5>
+                    <p class="card-text">Tampilan web yang menyesuaikan semua perangkat dengan performa optimal.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card text-center p-3">
+                    <div class="feature-icon mb-2">
+                        <i class="bi bi-palette"></i>
+                    </div>
+                    <h5 class="card-title">Desain Modern</h5>
+                    <p class="card-text">Menggunakan komponen Bootstrap terbaru dengan sentuhan desain kekinian.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card text-center p-3">
+                    <div class="feature-icon mb-2">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <h5 class="card-title">Mudah Dipelajari</h5>
+                    <p class="card-text">Cocok untuk pemula yang ingin belajar membuat website dengan cepat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Cenna Web. Dibuat dengan <span style="color:#4f8cff;">&#9829;</span> oleh Reza Avicenna.
+    </footer>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
