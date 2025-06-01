@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Validasi Form dengan jQuery & Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
+            min-height: 100vh;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .card {
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(33,147,176,0.15);
+            margin-top: 60px;
+        }
+        .form-label {
+            font-weight: 600;
+            color: #2193b0;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%);
+            border: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%);
+        }
+        h3 {
+            color: #2193b0;
+            font-weight: bold;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+        }
+        .invalid-feedback {
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card p-4">
+                    <h3 class="text-center">Formulir Pendaftaran</h3>
+                    <form id="formPendaftaran" novalidate>
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="nama" placeholder="Masukkan nama">
+                            <div id="errorNama" class="invalid-feedback">
+                                Nama tidak boleh kosong.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Kirim</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Validasi jQuery -->
+    <script>
+        $(document).ready(function () {
+            $('#formPendaftaran').on('submit', function (e) {
+                e.preventDefault();
+
+                let nama = $('#nama').val().trim();
+                let valid = true;
+
+                if (nama === "") {
+                    $('#nama').addClass('is-invalid');
+                    valid = false;
+                } else {
+                    $('#nama').removeClass('is-invalid');
+                }
+
+                if (valid) {
+                    // SweetAlert2 for better alert
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil!',
+                        text: 'Form berhasil dikirim!',
+                        confirmButtonColor: '#2193b0'
+                    });
+                    $('#formPendaftaran')[0].reset();
+                }
+            });
+
+            $('#nama').on('input', function () {
+                if ($(this).val().trim() !== "") {
+                    $(this).removeClass('is-invalid');
+                }
+            });
+        });
+    </script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

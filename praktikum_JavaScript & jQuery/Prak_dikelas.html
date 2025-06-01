@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Belajar JavaScript & jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #kotak, #panel, #box {
+      width: 200px;
+      height: 100px;
+      background-color: lightblue;
+      margin: 10px 0;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="judul">Belajar JavaScript dan jQuery</h1>
+  <p class="paragraf">Paragraf pertama</p>
+
+  <hr>
+
+  <!-- Event Handling -->
+  <button id="tombol">Klik Saya</button>
+
+  <!-- Toggle Effects -->
+  <button id="toggleButton">Slide Toggle Panel</button>
+  <div id="panel">Ini panel dengan efek slide</div>
+
+  <button id="fadeButton">Fade Toggle Box</button>
+  <div id="box">Ini box dengan efek fade</div>
+
+  <!-- Output AJAX -->
+  <h3>Data dari Server (AJAX):</h3>
+  <ul id="data-list"></ul>
+
+  <script>
+    // Variabel dan Fungsi
+    const nama = "Febrilia";
+    let umur = 21;
+    const mahasiswa = {
+      nama: "Febrilia",
+      umur: 21,
+      sapa: function () {
+        return "Halo, saya " + this.nama;
+      }
+    };
+    console.log(mahasiswa.sapa());
+
+    // jQuery DOM Manipulasi
+    $(document).ready(function () {
+      // Ubah teks dan warna
+      $("#judul").text("Belajar jQuery Interaktif");
+      $(".paragraf").css("color", "blue");
+
+      // Event klik
+      $("#tombol").click(function () {
+        alert("Tombol diklik!");
+      });
+
+      // Slide toggle
+      $("#toggleButton").click(function () {
+        $("#panel").slideToggle();
+      });
+
+      // Fade toggle
+      $("#fadeButton").click(function () {
+        $("#box").fadeToggle();
+      });
+
+      // AJAX jQuery
+      $.get("https://jsonplaceholder.typicode.com/posts?_limit=5", function (data) {
+        data.forEach(function (item) {
+          $("#data-list").append("<li><strong>" + item.title + "</strong></li>");
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
